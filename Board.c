@@ -46,6 +46,18 @@ struct Board_s* createBoard(int p_width, int p_height)
     return board;
 }
 
+struct Board_s* copyBoard(struct Board_s* p_board)
+{
+    struct Board_s* copy = createBoard(p_board->m_width - 1, p_board->m_height - 1);
+    int** copyMatrix = (int**) calloc(copy->m_width, sizeof(int*));
+    for(int i = 0; i < copy->m_width; ++i)
+        copyMatrix[i] = (int*) calloc(copy->m_height, sizeof(int));
+    copy->m_board = copyMatrix;
+    copy->m_playingTeam = p_board->m_playingTeam;
+    copy->m_remainingCases = p_board->m_remainingCases;
+    return copy;
+}
+
 void printBoard(struct Board_s* p_board)
 {
     int width = p_board->m_width, height = p_board->m_height;
@@ -291,18 +303,19 @@ void destroyBoard(struct Board_s* p_board)
     free(p_board);
 }
 
-bool stillPlayable(struct Board_s* p_board)
+bool stillPlayable(struct Board_s** p_board)
 {
-    int width = p_board->m_width;
-    int height = p_board->m_height;
+    int width = (*p_board)->m_width;
+    int height = (*p_board)->m_height;
     bool possible = false;
     for(int i = 1; i < width; ++i)
     {
         for(int j = 1; j < height; ++j)
         {
-            if(isPositionCorrect(p_board, j, i, false))
+            if(isPositionCorrect((*p_board), j, i, false))
             {
                 possible = true;
+                (*p_board)->m_nbPossibilites++;
             }
         }
     }
@@ -348,6 +361,7 @@ void clearBoardHints(struct Board_s** p_board)
 {
     int width = (*p_board)->m_width;
     int height = (*p_board)->m_height;
+    (*p_board)->m_nbPossibilites = 0;
 
     for(int i = 1; i < width; ++i)
     {

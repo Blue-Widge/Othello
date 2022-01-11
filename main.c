@@ -8,10 +8,10 @@ int main()
     while(1)
     {
         clearBoardHints(&board);
-        if (!stillPlayable(board))
+        if (!stillPlayable(&board))
         {
             board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
-            if (!stillPlayable(board))
+            if (!stillPlayable(&board))
             {
                 board->m_winner = whiteCount(board) > blackCount(board) ? WHITE : BLACK;
                 break;

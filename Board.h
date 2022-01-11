@@ -30,6 +30,7 @@ struct Board_s
     enum Team_e m_playingTeam;
     int m_remainingCases;
     enum Team_e m_winner;
+    int m_nbPossibilites;
 };
 
 enum Direction_e
@@ -46,6 +47,8 @@ enum Direction_e
 
 struct Board_s* createBoard(int p_width, int p_height);
 
+struct Board_s* copyBoard(struct Board_s* p_board);
+
 void printBoard(struct Board_s* p_board);
 
 void placePiece(struct Board_s** p_board, char p_position[2]);
@@ -56,7 +59,7 @@ void returnPieces(struct Board_s** p_board, int positionX, int positionY, enum D
 
 void destroyBoard(struct Board_s* p_board);
 
-bool stillPlayable(struct Board_s* p_board);
+bool stillPlayable(struct Board_s** p_board);
 
 int whiteCount(struct Board_s* p_board);
 
