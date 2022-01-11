@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Codes/Othello/AI.h
+
+D:/Codes/Othello/Board.h
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
+-
+
+D:/Codes/Othello/main.c
+Board.h
+D:/Codes/Othello/Board.h
+AI.h
+D:/Codes/Othello/AI.h
+
