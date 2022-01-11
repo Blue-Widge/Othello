@@ -6,6 +6,10 @@
 
 struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax)
 {
+    if (!p_difficulty)
+    {
+        // remonter les infos avec minMax;
+    }
     int width = p_board->m_width;
     int height = p_board->m_height;
     int remaining = p_board->m_nbPossibilites;
