@@ -13,6 +13,6 @@ struct AI_s
     struct AI_s** m_children;
 };
 
-updateAI(struct Board_s* p_board, struct AI_s*);
+void updateAI(struct Board_s* p_board, struct AI_s** p_AI);
 
 #endif //OTHELLO_AI_H
