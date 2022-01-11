@@ -3,6 +3,7 @@
 
 CMakeFiles/Othello.dir/AI.c.obj: ../AI.c
 CMakeFiles/Othello.dir/AI.c.obj: ../AI.h
+CMakeFiles/Othello.dir/AI.c.obj: ../Board.h
 
 CMakeFiles/Othello.dir/Board.c.obj: ../Board.c
 CMakeFiles/Othello.dir/Board.c.obj: ../Board.h

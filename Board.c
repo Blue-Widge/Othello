@@ -13,7 +13,6 @@
  * 8 -> [2][1]
  */
 
-
 struct Board_s* createBoard(int p_width, int p_height)
 {
     struct Board_s* board = (struct Board_s*) calloc(1, sizeof(struct Board_s));
@@ -70,7 +69,7 @@ void placePiece(struct Board_s** p_board, char p_position[2])
     while (positionX < 0 || positionX > (*p_board)->m_board[0][(*p_board)->m_width - 1] - 64 || positionY < 0 || positionY > (*p_board)->m_board[(*p_board)->m_height - 1][0])
     {
         CLEAR_CONSOLE;
-        printBoard((*p_board));
+            printBoard((*p_board));
         printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white");
         scanf("%s", p_position);
         positionY = p_position[1] - '0';

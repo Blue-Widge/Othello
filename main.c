@@ -1,13 +1,11 @@
-#include "Board.h"
 #include "AI.h"
 
 int main()
 {
-    bool game = true;
     int width = 8, height = 8;
     struct Board_s* board = createBoard(width, height);
     char position[2] = {0};
-    while(game)
+    while(1)
     {
         clearBoardHints(&board);
         if (!stillPlayable(board))
@@ -15,8 +13,8 @@ int main()
             board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
             if (!stillPlayable(board))
             {
-                game = false;
                 board->m_winner = whiteCount(board) > blackCount(board) ? WHITE : BLACK;
+                break;
             }
         }
         printBoard(board);
