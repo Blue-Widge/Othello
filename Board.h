@@ -14,6 +14,11 @@
 #define CLEAR_CONSOLE system("clear")
 #endif
 
+#define NORMAL "\033[0;37m"
+#define RED "\033[0;31m"
+#define BLUE "\033[0;34m"
+#define GREEN "\033[0;32m"
+
 enum Team_e
 {
     BLANK = 0,

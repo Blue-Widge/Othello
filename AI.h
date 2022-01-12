@@ -12,11 +12,11 @@ struct AI_s
     int m_MinMax;
     char m_position[2];
     struct AI_s** m_children;
-    struct Board_s* m_board;
+    struct Board_s* m_AIboard;
 };
 
-struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, enum Team_e playingTeam);
 
+struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, enum Team_e playingTeam);
 void updateAI(struct Board_s* p_board, struct AI_s** p_AI);
 
 void destroyAI(struct AI_s* p_AI);

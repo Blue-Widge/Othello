@@ -78,9 +78,25 @@ void printBoard(struct Board_s* p_board)
     {
         for(int j = 0; j < height; ++j)
         {
-            printf("%d ", p_board->m_board[i][j]);
+            int toPrint = p_board->m_board[i][j];
+            if (j != 0)
+            {
+                switch (toPrint)
+                {
+                    case BLANK : printf(NORMAL);
+                        break;
+                    case BLACK : printf(BLUE);
+                        break;
+                    case WHITE : printf(RED);
+                        break;
+                    case PLAYABLE : printf(GREEN);
+                        break;
+                }
+            }
+            printf("%d ", toPrint);
         }
         printf("\n");
+        printf(NORMAL);
     }
 }
 
@@ -88,7 +104,7 @@ void placePiece(struct Board_s** p_board, char p_position[2])
 {
     int positionX = p_position[0] - 'A' + 1;
     int positionY = p_position[1] - '0';
-    while (positionX < 0 || positionX > (*p_board)->m_board[0][(*p_board)->m_width - 1] - 64 || positionY < 0 || positionY > (*p_board)->m_board[(*p_board)->m_height - 1][0])
+    while (positionX < 1 || positionX > (*p_board)->m_width - 1 || positionY < 1 || positionY > (*p_board)->m_height - 1)
     {
         CLEAR_CONSOLE;
             printBoard((*p_board));

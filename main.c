@@ -1,8 +1,10 @@
+#include <unistd.h>
 #include "AI.h"
 
 int main()
 {
-    int width = 8, height = 8;
+    int width = 50, height = 16;
+    int difficulty = 2;
     struct Board_s* board = createBoard(width, height);
     char position[2] = {0};
     while(1)
@@ -19,11 +21,36 @@ int main()
         }
         printBoard(board);
         printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ? "black" : "white");
-        if (board->m_playingTeam == WHITE)
+        if (board->m_playingTeam == WHITE || board->m_playingTeam == BLACK)
         {
+            //sleep(1);
+            if (board->m_nbPossibilites == 1)
+            {
+                for(int i = 0; i < board->m_width; ++i)
+                {
+                    for(int j = 0; j < board->m_height; ++j)
+                    {
+                        if (board->m_board[j][i] == PLAYABLE)
+                        {
+                            position[1] = j + '0';
+                            position[0] = i + 'A' - 1;
+                            i = board->m_width;
+                            j = board->m_height;
+                            board->m_nbPossibilites = 0;
+                        }
+                    }
+                }
+            }
             int minMax = 0;
-            struct AI_s* AI = createAI(board, 3, &minMax, board->m_playingTeam);
-            position[0] = AI->m_position[0];    position[1] = AI->m_position[1];
+
+            struct AI_s* AI = createAI(board, difficulty, &minMax, board->m_playingTeam);
+            for(int i = 0; i < board->m_nbPossibilites; ++i)
+            {
+                if (AI->m_children[i] && AI->m_MinMax == AI->m_children[i]->m_MinMax)
+                {
+                    position[0] = AI->m_children[i]->m_position[0];    position[1] = AI->m_children[i]->m_position[1];
+                }
+            }
             destroyAI(AI);
         }
         else
