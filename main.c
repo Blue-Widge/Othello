@@ -19,7 +19,15 @@ int main()
         }
         printBoard(board);
         printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ? "black" : "white");
-        scanf("%s", position);
+        if (board->m_playingTeam == WHITE)
+        {
+            int minMax = 0;
+            struct AI_s* AI = createAI(board, 3, &minMax, board->m_playingTeam);
+            position[0] = AI->m_position[0];    position[1] = AI->m_position[1];
+            destroyAI(AI);
+        }
+        else
+            scanf("%s", position);
         placePiece(&board, position);
         board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
         CLEAR_CONSOLE;

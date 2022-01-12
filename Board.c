@@ -48,10 +48,20 @@ struct Board_s* createBoard(int p_width, int p_height)
 
 struct Board_s* copyBoard(struct Board_s* p_board)
 {
-    struct Board_s* copy = createBoard(p_board->m_width - 1, p_board->m_height - 1);
+    int width = p_board->m_width;
+    int height = p_board->m_height;
+
+    struct Board_s* copy = createBoard(width - 1, p_board->m_height - 1);
     int** copyMatrix = (int**) calloc(copy->m_width, sizeof(int*));
     for(int i = 0; i < copy->m_width; ++i)
         copyMatrix[i] = (int*) calloc(copy->m_height, sizeof(int));
+    int** boardMatrix = p_board->m_board;
+
+    for(int i = 0; i < width; ++i)
+    {
+        for(int j = 0; j < height; ++j)
+            copyMatrix[j][i] = boardMatrix[j][i];
+    }
     copy->m_board = copyMatrix;
     copy->m_playingTeam = p_board->m_playingTeam;
     copy->m_remainingCases = p_board->m_remainingCases;
