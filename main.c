@@ -1,10 +1,9 @@
-#include <unistd.h>
 #include "AI.h"
-
 int main()
 {
+    system(" ");
     int width = 8, height = 8;
-    int difficulty = 3;
+    int difficulty = 4;
     struct Board_s* board = createBoard(width, height);
     char position[3] = {0};
     while(1)
@@ -15,16 +14,15 @@ int main()
             board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
             if (!stillPlayable(&board))
             {
-
+                //PAUSE_ONESEC;
                 board->m_winner = whiteCount(board) > blackCount(board) ? WHITE : BLACK;
                 break;
             }
         }
         printBoard(board);
-        printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ? BLUE "black" NORMAL : RED "white" NORMAL);
-        if (board->m_playingTeam == WHITE && board->m_playingTeam == BLACK)
+        printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ?  "black"  :  "white" );
+        if (board->m_playingTeam == WHITE)
         {
-            //sleep(1);
             if (board->m_nbPossibilites == 1)
             {
                 for (int i = 1; i < board->m_width; ++i)
@@ -69,10 +67,10 @@ int main()
             printf("There is no more cases left. Nobody wins ! \n");
             break;
         case BLACK:
-            printf("Black ate all white pawns, Black player wins ! \n");
+            printf("Black controls the most part of the board, black player wins ! \n");
             break;
         case WHITE:
-            printf("White ate all black pawns, White player wins ! \n");
+            printf("White controls the most part of the board, white player wins ! \n");
             break;
         default:
             printf("I dunno who wins\n");

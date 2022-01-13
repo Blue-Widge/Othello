@@ -2,7 +2,6 @@
 // Created by bluew on 11/01/2022.
 //
 
-#include <cmdtree.h>
 #include "Board.h"
 
 struct Board_s* createBoard(int p_width, int p_height)
@@ -80,16 +79,16 @@ void printBoard(struct Board_s* p_board)
                 switch (toPrint)
                 {
                     case BLANK :
-                        BLACK_PAWN;
+                        (i + j) % 2 == 0 ? EMPTY_TILE_DARK : EMPTY_TILE_LIGHT;
                         break;
                     case BLACK :
-                        BLACK_PAWN;
+                        (i + j) % 2 == 0 ? BLACK_PAWN_DARK : BLACK_PAWN_LIGHT;
                         break;
                     case WHITE :
-                        WHITE_PAWN;
+                        (i + j) % 2 == 0 ? WHITE_PAWN_DARK : WHITE_PAWN_LIGHT;
                         break;
                     case PLAYABLE :
-                        POSSIBLE_TILE;
+                        POSSIBLE_TILE_DARK;
                         break;
             }
             printf("%d ", toPrint);
@@ -109,7 +108,7 @@ void placePiece(struct Board_s** p_board, char p_position[3])
     {
         CLEAR_CONSOLE;
             printBoard((*p_board));
-        printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? BLUE "black" NORMAL : RED "white" NORMAL);
+        printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white");
         scanf("%s", p_position);
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;
@@ -118,7 +117,7 @@ void placePiece(struct Board_s** p_board, char p_position[3])
     {
         CLEAR_CONSOLE;
         printBoard((*p_board));
-        printf("Please enter a correct position %s player [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ?  BLUE "black" NORMAL : RED "white" NORMAL );
+        printf("Please enter a correct position %s player [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white" );
         scanf("%s", p_position);
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;
