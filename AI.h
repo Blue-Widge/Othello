@@ -10,7 +10,7 @@ struct AI_s
 {
     int m_possNumber;
     int m_MinMax;
-    char m_position[2];
+    char m_position[3];
     struct AI_s** m_children;
     struct Board_s* m_AIboard;
 };

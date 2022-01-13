@@ -2,16 +2,8 @@
 // Created by bluew on 11/01/2022.
 //
 
+#include <cmdtree.h>
 #include "Board.h"
-
-/*
- * 123
- * 456
- * 789
- *
- * 2 -> [0][1]
- * 8 -> [2][1]
- */
 
 struct Board_s* createBoard(int p_width, int p_height)
 {
@@ -71,36 +63,45 @@ struct Board_s* copyBoard(struct Board_s* p_board)
 void printBoard(struct Board_s* p_board)
 {
     int width = p_board->m_width, height = p_board->m_height;
+    printf(NORMAL);
+    printf("  ");
     for(int i = 0; i < width; ++i)
         printf("%c ", p_board->m_board[0][i]);
     printf("\n");
     for(int i = 1; i < width; ++i)
     {
-        for(int j = 0; j < height; ++j)
+        if (i > 9)
+            printf("%d ", i);
+        else
+            printf("%d  ", i);
+        for(int j = 1; j < height; ++j)
         {
             int toPrint = p_board->m_board[i][j];
-            if (j != 0)
-            {
                 switch (toPrint)
                 {
-                    case BLANK : printf(NORMAL);
+                    case BLANK :
+                        BLACK_PAWN;
                         break;
-                    case BLACK : printf(BLUE);
+                    case BLACK :
+                        BLACK_PAWN;
                         break;
-                    case WHITE : printf(RED);
+                    case WHITE :
+                        WHITE_PAWN;
                         break;
-                    case PLAYABLE : printf(GREEN);
+                    case PLAYABLE :
+                        POSSIBLE_TILE;
                         break;
-                }
             }
             printf("%d ", toPrint);
         }
+        RESET_TEXT;
         printf("\n");
+
         printf(NORMAL);
     }
 }
 
-void placePiece(struct Board_s** p_board, char p_position[2])
+void placePiece(struct Board_s** p_board, char p_position[3])
 {
     int positionX = p_position[0] - 'A' + 1;
     int positionY = p_position[1] - '0';
@@ -108,7 +109,7 @@ void placePiece(struct Board_s** p_board, char p_position[2])
     {
         CLEAR_CONSOLE;
             printBoard((*p_board));
-        printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white");
+        printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? BLUE "black" NORMAL : RED "white" NORMAL);
         scanf("%s", p_position);
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;
@@ -117,7 +118,7 @@ void placePiece(struct Board_s** p_board, char p_position[2])
     {
         CLEAR_CONSOLE;
         printBoard((*p_board));
-        printf("Please enter a correct position %s player [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white");
+        printf("Please enter a correct position %s player [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ?  BLUE "black" NORMAL : RED "white" NORMAL );
         scanf("%s", p_position);
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;

@@ -3,10 +3,10 @@
 
 int main()
 {
-    int width = 50, height = 16;
-    int difficulty = 2;
+    int width = 8, height = 8;
+    int difficulty = 3;
     struct Board_s* board = createBoard(width, height);
-    char position[2] = {0};
+    char position[3] = {0};
     while(1)
     {
         clearBoardHints(&board);
@@ -15,20 +15,21 @@ int main()
             board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
             if (!stillPlayable(&board))
             {
+
                 board->m_winner = whiteCount(board) > blackCount(board) ? WHITE : BLACK;
                 break;
             }
         }
         printBoard(board);
-        printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ? "black" : "white");
-        if (board->m_playingTeam == WHITE || board->m_playingTeam == BLACK)
+        printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ? BLUE "black" NORMAL : RED "white" NORMAL);
+        if (board->m_playingTeam == WHITE && board->m_playingTeam == BLACK)
         {
             //sleep(1);
             if (board->m_nbPossibilites == 1)
             {
-                for(int i = 0; i < board->m_width; ++i)
+                for (int i = 1; i < board->m_width; ++i)
                 {
-                    for(int j = 0; j < board->m_height; ++j)
+                    for (int j = 1; j < board->m_height; ++j)
                     {
                         if (board->m_board[j][i] == PLAYABLE)
                         {
@@ -36,22 +37,24 @@ int main()
                             position[0] = i + 'A' - 1;
                             i = board->m_width;
                             j = board->m_height;
-                            board->m_nbPossibilites = 0;
                         }
                     }
                 }
             }
-            int minMax = 0;
-
-            struct AI_s* AI = createAI(board, difficulty, &minMax, board->m_playingTeam);
-            for(int i = 0; i < board->m_nbPossibilites; ++i)
+            else
             {
-                if (AI->m_children[i] && AI->m_MinMax == AI->m_children[i]->m_MinMax)
+                int minMax = 0;
+                struct AI_s* AI = createAI(board, difficulty, &minMax, board->m_playingTeam);
+                for (int i = 0; i < board->m_nbPossibilites; ++i)
                 {
-                    position[0] = AI->m_children[i]->m_position[0];    position[1] = AI->m_children[i]->m_position[1];
+                    if (AI->m_children[i] && AI->m_MinMax == AI->m_children[i]->m_MinMax)
+                    {
+                        position[0] = AI->m_children[i]->m_position[0];
+                        position[1] = AI->m_children[i]->m_position[1];
+                    }
                 }
+                destroyAI(AI);
             }
-            destroyAI(AI);
         }
         else
             scanf("%s", position);
@@ -59,6 +62,7 @@ int main()
         board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
         CLEAR_CONSOLE;
     }
+    printBoard(board);
     switch (board->m_winner)
     {
         case BLANK :

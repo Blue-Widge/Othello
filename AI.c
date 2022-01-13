@@ -11,6 +11,7 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
         return NULL;
     }
     clearBoardHints(&p_board);
+
     if (!p_difficulty || !stillPlayable(&p_board))
     {
         (*p_minMax) = whiteCount(p_board) - blackCount(p_board);
@@ -41,7 +42,8 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
         destroyAI(AI);
         return NULL;
     }
-    char position[2] = "\0\0";
+    char position[3] = {0};
+
     for(int i = 1; i < width; ++i)
     {
         for(int j = 1; j < height; ++j)
@@ -57,9 +59,6 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
                     printf("ERROR while creating copy in createAI() (remaining : %d\n", remaining);
                 }
                 placePiece(&copy, position);
-                /*CLEAR_CONSOLE;
-                printBoard(copy);*/
-                clearBoardHints(&copy);
                 AI->m_children[remaining] = createAI(copy, p_difficulty - 1, p_minMax, oppositeTeam);
                 if (!AI->m_children[remaining])
                 {
