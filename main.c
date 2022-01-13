@@ -3,8 +3,9 @@ int main()
 {
     system(" ");
     int width = 8, height = 8;
-    int difficulty = 4;
-    struct Board_s* board = createBoard(width, height);
+    int difficulty = 3;
+    struct Board_s* board = createBoard(width, height, true);
+    char* userEntry = (char*) calloc(128, sizeof(char));
     char position[3] = {0};
     while(1)
     {
@@ -21,8 +22,10 @@ int main()
         }
         printBoard(board);
         printf("Where will you place your pawn %s player ?\n", board->m_playingTeam == BLACK ?  "black"  :  "white" );
-        if (board->m_playingTeam == WHITE)
+        if (//board->m_playingTeam == WHITE
+    1)
         {
+            struct Board_s* copy = copyBoard(board);
             if (board->m_nbPossibilites == 1)
             {
                 for (int i = 1; i < board->m_width; ++i)
@@ -42,7 +45,7 @@ int main()
             else
             {
                 int minMax = 0;
-                struct AI_s* AI = createAI(board, difficulty, &minMax, board->m_playingTeam);
+                struct AI_s* AI = createAI(copy, difficulty, &minMax, board->m_playingTeam);
                 for (int i = 0; i < board->m_nbPossibilites; ++i)
                 {
                     if (AI->m_children[i] && AI->m_MinMax == AI->m_children[i]->m_MinMax)
@@ -51,11 +54,15 @@ int main()
                         position[1] = AI->m_children[i]->m_position[1];
                     }
                 }
-                destroyAI(AI);
+                destroyAI(&AI);
             }
         }
         else
-            scanf("%s", position);
+        {
+            scanf("%s", userEntry);
+            position[0] = userEntry[0];
+            position[1] = userEntry[1];
+        }
         placePiece(&board, position);
         board->m_playingTeam = board->m_playingTeam == BLACK ? WHITE : BLACK;
         CLEAR_CONSOLE;
@@ -76,5 +83,6 @@ int main()
             printf("I dunno who wins\n");
             break;
     }
-    destroyBoard(board);
+    destroyBoard(&board);
+    free(userEntry);
 }

@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/Codes/Othello/AI.c
-AI.h
-D:/Codes/Othello/AI.h
-
-D:/Codes/Othello/AI.h
-Board.h
-D:/Codes/Othello/Board.h
-
 D:/Codes/Othello/Board.c
 Board.h
 D:/Codes/Othello/Board.h
@@ -27,8 +19,6 @@ stdbool.h
 -
 windows.h
 -
-
-D:/Codes/Othello/main.c
-AI.h
-D:/Codes/Othello/AI.h
+unistd.h
+-
 

@@ -4,7 +4,7 @@
 
 #include "Board.h"
 
-struct Board_s* createBoard(int p_width, int p_height)
+struct Board_s* createBoard(int p_width, int p_height, bool p_withBoard)
 {
     struct Board_s* board = (struct Board_s*) calloc(1, sizeof(struct Board_s));
     if (p_width != p_height)
@@ -19,6 +19,12 @@ struct Board_s* createBoard(int p_width, int p_height)
     board->m_remainingCases = p_width * p_height;
 
     int middle = p_width / 2;
+
+    if(!p_withBoard)
+    {
+        board->m_board = NULL;
+        return board;
+    }
 
     int** boardMatrix = (int**) calloc(board->m_width, sizeof(int*));
     for(int i = 0; i < board->m_width; ++i)
@@ -42,12 +48,11 @@ struct Board_s* copyBoard(struct Board_s* p_board)
     int width = p_board->m_width;
     int height = p_board->m_height;
 
-    struct Board_s* copy = createBoard(width - 1, p_board->m_height - 1);
+    struct Board_s* copy = createBoard(width - 1, height - 1, false);
     int** copyMatrix = (int**) calloc(copy->m_width, sizeof(int*));
     for(int i = 0; i < copy->m_width; ++i)
         copyMatrix[i] = (int*) calloc(copy->m_height, sizeof(int));
     int** boardMatrix = p_board->m_board;
-
     for(int i = 0; i < width; ++i)
     {
         for(int j = 0; j < height; ++j)
@@ -107,7 +112,7 @@ void placePiece(struct Board_s** p_board, char p_position[3])
     while (positionX < 1 || positionX > (*p_board)->m_width - 1 || positionY < 1 || positionY > (*p_board)->m_height - 1)
     {
         CLEAR_CONSOLE;
-            printBoard((*p_board));
+        printBoard((*p_board));
         printf("Please enter in the correct format %s player : [majLetter][number]\n", (*p_board)->m_playingTeam == BLACK ? "black" : "white");
         scanf("%s", p_position);
         positionY = p_position[1] - '0';
@@ -320,13 +325,20 @@ void returnPieces(struct Board_s** p_board, int positionX, int positionY, enum D
     }
 }
 
-void destroyBoard(struct Board_s* p_board)
+void destroyBoard(struct Board_s** p_board)
 {
-    int width = p_board->m_width;
+    if (!p_board || !(*p_board))
+        return;
+    int width = (*p_board)->m_width;
     for(int i = 0; i < width; ++i)
-        free(p_board->m_board[i]);
-    free(p_board->m_board);
-    free(p_board);
+    {
+        free((*p_board)->m_board[i]);
+        (*p_board)->m_board[i] = NULL;
+    }
+    free((*p_board)->m_board);
+    (*p_board)->m_board = NULL;
+    free((*p_board));
+    (*p_board) = NULL;
 }
 
 bool stillPlayable(struct Board_s** p_board)
@@ -350,6 +362,11 @@ bool stillPlayable(struct Board_s** p_board)
 
 int whiteCount(struct Board_s* p_board)
 {
+    if (!p_board)
+    {
+        printf("ERROR in whiteCount() p_board NULL\n");
+        //PAUSE_ONESEC; PAUSE_ONESEC;
+    }
     int width = p_board->m_width;
     int height = p_board->m_height;
     int** matrix = p_board->m_board;
@@ -367,6 +384,11 @@ int whiteCount(struct Board_s* p_board)
 
 int blackCount(struct Board_s* p_board)
 {
+    if (!p_board)
+    {
+        printf("ERROR in blackCount() p_board NULL\n");
+        PAUSE_ONESEC; PAUSE_ONESEC;
+    }
     int width = p_board->m_width;
     int height = p_board->m_height;
     int** matrix = p_board->m_board;

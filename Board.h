@@ -9,9 +9,9 @@
 #include <stdbool.h>
 
 #ifdef WIN32
+#include <windows.h>
 #define CLEAR_CONSOLE system("cls")
 #define PAUSE_ONESEC system("timeout 1")
-#include <windows.h>
 #define FOREGROUND_WHITE (FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY)
 #define WHITE_PAWN_DARK SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN | FOREGROUND_WHITE)
 #define WHITE_PAWN_LIGHT SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN | BACKGROUND_INTENSITY | FOREGROUND_WHITE)
@@ -22,6 +22,7 @@
 #define EMPTY_TILE_LIGHT SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN | BACKGROUND_INTENSITY | FOREGROUND_GREEN | FOREGROUND_INTENSITY)
 #define RESET_TEXT SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7)
 #else
+#include <unistd.h>
 #define CLEAR_CONSOLE system("clear")
 #define PAUSE_ONESEC sleep(1)
 #define WHITE_PAWN_DARK printf("\033[37m\033[0;47m")
@@ -71,7 +72,7 @@ enum Direction_e
     DOWNRIGHT
 };
 
-struct Board_s* createBoard(int p_width, int p_height);
+struct Board_s* createBoard(int p_width, int p_height, bool p_withBoard);
 
 struct Board_s* copyBoard(struct Board_s* p_board);
 
@@ -83,7 +84,7 @@ bool isPositionCorrect(struct Board_s* p_board, int positionX, int positionY, bo
 
 void returnPieces(struct Board_s** p_board, int positionX, int positionY, enum Direction_e p_direction, int number);
 
-void destroyBoard(struct Board_s* p_board);
+void destroyBoard(struct Board_s** p_board);
 
 bool stillPlayable(struct Board_s** p_board);
 

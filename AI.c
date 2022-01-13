@@ -32,18 +32,13 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
     if (!AI->m_children)
     {
         printf("ERROR while creating AI->m_children in createAI()\n");
-        destroyAI(AI);
+        destroyAI(&AI);
         return NULL;
     }
-    AI->m_AIboard = copyBoard(p_board);
-    if (!AI->m_AIboard)
-    {
-        printf("ERROR while creating AI->m_board in createAI()\n");
-        destroyAI(AI);
-        return NULL;
-    }
+    AI->m_possNumber = p_board->m_nbPossibilites;
+    AI->m_AIboard = p_board;
     char position[3] = {0};
-
+    struct Board_s* copy = NULL;
     for(int i = 1; i < width; ++i)
     {
         for(int j = 1; j < height; ++j)
@@ -53,10 +48,13 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
                 remaining--;
                 position[1] = j + '0';
                 position[0] = i + 'A' - 1;
-                struct Board_s* copy = copyBoard(p_board);
+                copy = copyBoard(p_board);
                 if (!copy)
                 {
                     printf("ERROR while creating copy in createAI() (remaining : %d\n", remaining);
+                    destroyBoard(&copy);
+                    destroyAI(&AI);
+                    return NULL;
                 }
                 placePiece(&copy, position);
                 AI->m_children[remaining] = createAI(copy, p_difficulty - 1, p_minMax, oppositeTeam);
@@ -69,13 +67,14 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
                     AI->m_children[remaining]->m_position[0] = position[0];
                     AI->m_children[remaining]->m_position[1] = position[1];
                 }
+                destroyBoard(&copy);
             }
         }
     }
     if (AI->m_children[0])
     {
         AI->m_MinMax = AI->m_children[0]->m_MinMax;
-        for(int i = 1; i < p_board->m_nbPossibilites; ++i)
+        for(int i = 1; i < AI->m_possNumber; ++i)
         {
             if (AI->m_children[i])
             {
@@ -93,15 +92,28 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
     return AI;
 }
 
-void destroyAI(struct AI_s* p_AI)
+void destroyAI(struct AI_s** p_AI)
 {
-    int nbChildren = p_AI->m_possNumber;
+    if (!p_AI || !(*p_AI))
+        return;
+    int nbChildren = (*p_AI)->m_possNumber;
     for(int i = 0; i < nbChildren; ++i)
     {
-        destroyBoard((p_AI->m_children[i]->m_AIboard));
-        free(p_AI->m_children[i]);
+        if ((*p_AI)->m_children[i] && (*p_AI)->m_children[i]->m_AIboard)
+        {
+            destroyBoard(&((*p_AI)->m_children[i]->m_AIboard));
+            (*p_AI)->m_children[i]->m_AIboard = NULL;
+        }
+        destroyAI(&((*p_AI)->m_children[i]));
+        (*p_AI)->m_children[i] = NULL;
     }
-    destroyBoard(p_AI->m_AIboard);
-    free(p_AI->m_children);
-    free(p_AI);
+    if ((*p_AI)->m_AIboard)
+    {
+        destroyBoard(&(*p_AI)->m_AIboard);
+        (*p_AI)->m_AIboard = NULL;
+    }
+    free((*p_AI)->m_children);
+    (*p_AI)->m_children = NULL;
+    free((*p_AI));
+    (*p_AI) = NULL;
 }

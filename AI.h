@@ -19,5 +19,5 @@ struct AI_s
 struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, enum Team_e playingTeam);
 void updateAI(struct Board_s* p_board, struct AI_s** p_AI);
 
-void destroyAI(struct AI_s* p_AI);
+void destroyAI(struct AI_s** p_AI);
 #endif //OTHELLO_AI_H
