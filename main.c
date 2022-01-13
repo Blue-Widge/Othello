@@ -1,6 +1,7 @@
 #include "AI.h"
 int main()
 {
+#if 1
     system(" ");
     int width = 8, height = 8;
     int difficulty = 3;
@@ -85,4 +86,14 @@ int main()
     }
     destroyBoard(&board);
     free(userEntry);
+#else
+    struct Board_s* board = createBoard(8,8,true);
+    struct Board_s* copy = copyBoard(board);
+    stillPlayable(&board);
+    printBoard(board);
+    int oui = 0;
+    struct AI_s* AI = createAI(copy, 3, &oui, WHITE);
+    destroyAI(&AI);
+    destroyBoard(&board);
+#endif
 }

@@ -61,13 +61,13 @@ struct AI_s* createAI(struct Board_s* p_board, int p_difficulty, int* p_minMax, 
                 if (!AI->m_children[remaining])
                 {
                     AI->m_MinMax = *p_minMax;
+                    destroyBoard(&copy);
                 }
                 else
                 {
                     AI->m_children[remaining]->m_position[0] = position[0];
                     AI->m_children[remaining]->m_position[1] = position[1];
                 }
-                destroyBoard(&copy);
             }
         }
     }
