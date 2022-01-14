@@ -15,15 +15,15 @@ The C compiler identification is GNU, found in "D:/Codes/Othello/cmake-build-deb
 Determining if the C compiler works passed with the following output:
 Change Dir: D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_6c90b/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_6c90b.dir\build.make CMakeFiles/cmTC_6c90b.dir/build
+Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_17c8d/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_17c8d.dir\build.make CMakeFiles/cmTC_17c8d.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6c90b.dir/testCCompiler.c.obj
-D:\Codes\MingW\bin\gcc.exe    -o CMakeFiles\cmTC_6c90b.dir\testCCompiler.c.obj   -c D:\Codes\Othello\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
-Linking C executable cmTC_6c90b.exe
-"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_6c90b.dir\link.txt --verbose=1
-"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_6c90b.dir/objects.a
-D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_6c90b.dir/objects.a @CMakeFiles\cmTC_6c90b.dir\objects1.rsp
-D:\Codes\MingW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_6c90b.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6c90b.exe -Wl,--out-implib,libcmTC_6c90b.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_6c90b.dir\linklibs.rsp
+Building C object CMakeFiles/cmTC_17c8d.dir/testCCompiler.c.obj
+D:\Codes\MingW\bin\gcc.exe    -o CMakeFiles\cmTC_17c8d.dir\testCCompiler.c.obj   -c D:\Codes\Othello\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_17c8d.exe
+"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_17c8d.dir\link.txt --verbose=1
+"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_17c8d.dir/objects.a
+D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_17c8d.dir/objects.a @CMakeFiles\cmTC_17c8d.dir\objects1.rsp
+D:\Codes\MingW\bin\gcc.exe      -Wl,--whole-archive CMakeFiles\cmTC_17c8d.dir/objects.a -Wl,--no-whole-archive  -o cmTC_17c8d.exe -Wl,--out-implib,libcmTC_17c8d.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_17c8d.dir\linklibs.rsp
 mingw32-make.exe[1]: Leaving directory 'D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -31,18 +31,18 @@ mingw32-make.exe[1]: Leaving directory 'D:/Codes/Othello/cmake-build-debug/CMake
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_405fa/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_405fa.dir\build.make CMakeFiles/cmTC_405fa.dir/build
+Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_7f332/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_7f332.dir\build.make CMakeFiles/cmTC_7f332.dir/build
 mingw32-make.exe[1]: Entering directory 'D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_405fa.dir/CMakeCCompilerABI.c.obj
-D:\Codes\MingW\bin\gcc.exe   -v -o CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj   -c "D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c"
+Building C object CMakeFiles/cmTC_7f332.dir/CMakeCCompilerABI.c.obj
+D:\Codes\MingW\bin\gcc.exe   -v -o CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj   -c "D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c"
 Reading specs from d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/specs
 COLLECT_GCC=D:\Codes\MingW\bin\gcc.exe
 Target: x86_64-w64-mingw32
 Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_64 --with-sysroot=/opt/windows_64 --libdir=/opt/windows_64/lib64 --mandir=/opt/windows_64/man --infodir=/opt/windows_64/info --enable-shared --disable-bootstrap --disable-multilib --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_64/lib64/jvm/jre --with-jvm-root-dir=/opt/windows_64/lib64/jvm --with-jvm-jar-dir=/opt/windows_64/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32
 Thread model: posix
 gcc version 4.8.3 (GCC) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
- d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\codes\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/Codes/MingW/include D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\bluew\AppData\Local\Temp\ccWOWk8k.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\codes\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/Codes/MingW/include D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\bluew\AppData\Local\Temp\cckwYmjL.s
 GNU C (GCC) version 4.8.3 (x86_64-w64-mingw32)
 	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
@@ -62,17 +62,17 @@ GNU C (GCC) version 4.8.3 (x86_64-w64-mingw32)
 	compiled by GNU C version 4.8.3, GMP version 5.1.3, MPFR version 3.1.2, MPC version 0.8.2
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: 88950af95bccaa8c19f032b0ac36794b
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
- d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj C:\Users\bluew\AppData\Local\Temp\ccWOWk8k.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+ d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj C:\Users\bluew\AppData\Local\Temp\cckwYmjL.s
 GNU assembler version 2.24 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.24
 COMPILER_PATH=d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/;d:/codes/mingw/bin/../libexec/gcc/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/;d:/codes/mingw/bin/../lib64/gcc/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
-Linking C executable cmTC_405fa.exe
-"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_405fa.dir\link.txt --verbose=1
-"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_405fa.dir/objects.a
-D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_405fa.dir/objects.a @CMakeFiles\cmTC_405fa.dir\objects1.rsp
-D:\Codes\MingW\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_405fa.dir/objects.a -Wl,--no-whole-archive  -o cmTC_405fa.exe -Wl,--out-implib,libcmTC_405fa.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_7f332.exe
+"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_7f332.dir\link.txt --verbose=1
+"D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_7f332.dir/objects.a
+D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_7f332.dir/objects.a @CMakeFiles\cmTC_7f332.dir\objects1.rsp
+D:\Codes\MingW\bin\gcc.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_7f332.dir/objects.a -Wl,--no-whole-archive  -o cmTC_7f332.exe -Wl,--out-implib,libcmTC_7f332.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
 Reading specs from d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/specs
 COLLECT_GCC=D:\Codes\MingW\bin\gcc.exe
 COLLECT_LTO_WRAPPER=d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/lto-wrapper.exe
@@ -82,8 +82,8 @@ Thread model: posix
 gcc version 4.8.3 (GCC) 
 COMPILER_PATH=d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/;d:/codes/mingw/bin/../libexec/gcc/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/;d:/codes/mingw/bin/../lib64/gcc/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/;d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_405fa.exe' '-mtune=generic' '-march=x86-64'
- d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_64 -m i386pep -Bdynamic -o cmTC_405fa.exe d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtbegin.o -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3 -Ld:/codes/mingw/bin/../lib64/gcc -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_405fa.dir/objects.a --no-whole-archive --out-implib libcmTC_405fa.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/Codes/MingW/lib64 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7f332.exe' '-mtune=generic' '-march=x86-64'
+ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_64 -m i386pep -Bdynamic -o cmTC_7f332.exe d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtbegin.o -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3 -Ld:/codes/mingw/bin/../lib64/gcc -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_7f332.dir/objects.a --no-whole-archive --out-implib libcmTC_7f332.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/Codes/MingW/lib64 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtend.o
 mingw32-make.exe[1]: Leaving directory 'D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp'
 
 
@@ -107,18 +107,18 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_405fa/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_405fa.dir\build.make CMakeFiles/cmTC_405fa.dir/build]
+  ignore line: [Run Build Command(s):D:/Codes/MingW/bin/mingw32-make.exe cmTC_7f332/fast && D:/Codes/MingW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_7f332.dir\build.make CMakeFiles/cmTC_7f332.dir/build]
   ignore line: [mingw32-make.exe[1]: Entering directory 'D:/Codes/Othello/cmake-build-debug/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_405fa.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [D:\Codes\MingW\bin\gcc.exe   -v -o CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj   -c "D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c"]
+  ignore line: [Building C object CMakeFiles/cmTC_7f332.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [D:\Codes\MingW\bin\gcc.exe   -v -o CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj   -c "D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c"]
   ignore line: [Reading specs from d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/specs]
   ignore line: [COLLECT_GCC=D:\Codes\MingW\bin\gcc.exe]
   ignore line: [Target: x86_64-w64-mingw32]
   ignore line: [Configured with: ../gcc-4.8.3/configure --prefix=/opt/windows_64 --with-sysroot=/opt/windows_64 --libdir=/opt/windows_64/lib64 --mandir=/opt/windows_64/man --infodir=/opt/windows_64/info --enable-shared --disable-bootstrap --disable-multilib --enable-threads=posix --enable-languages=c,c++ --enable-checking=release --enable-libgomp --with-system-zlib --with-python-dir=/lib64/python2.7/site-packages --disable-libunwind-exceptions --enable-__cxa_atexit --enable-libssp --with-gnu-ld --verbose --enable-java-home --with-java-home=/opt/windows_64/lib64/jvm/jre --with-jvm-root-dir=/opt/windows_64/lib64/jvm --with-jvm-jar-dir=/opt/windows_64/lib64/jvm/jvm-exports --with-arch-directory=amd64 --with-antlr-jar='/home/adrien/projects/win-builds-1.5/slackware64-current/d/gcc/antlr-*.jar' --disable-java-awt --disable-gtktest --build=x86_64-slackware-linux --host=x86_64-w64-mingw32 --target=x86_64-w64-mingw32]
   ignore line: [Thread model: posix]
   ignore line: [gcc version 4.8.3 (GCC) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\codes\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/Codes/MingW/include D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\bluew\AppData\Local\Temp\ccWOWk8k.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/cc1.exe -quiet -v -iprefix d:\codes\mingw\bin\../lib64/gcc/x86_64-w64-mingw32/4.8.3/ -D_REENTRANT -ID:/Codes/MingW/include D:\Programmes\CLion 2020.3.2\bin\cmake\win\share\cmake-3.17\Modules\CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj -version -o C:\Users\bluew\AppData\Local\Temp\cckwYmjL.s]
   ignore line: [GNU C (GCC) version 4.8.3 (x86_64-w64-mingw32)]
   ignore line: [	compiled by GNU C version 4.8.3  GMP version 5.1.3  MPFR version 3.1.2  MPC version 0.8.2]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
@@ -138,8 +138,8 @@ Parsed C implicit link information from above output:
   ignore line: [	compiled by GNU C version 4.8.3  GMP version 5.1.3  MPFR version 3.1.2  MPC version 0.8.2]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: 88950af95bccaa8c19f032b0ac36794b]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [ d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj C:\Users\bluew\AppData\Local\Temp\ccWOWk8k.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj C:\Users\bluew\AppData\Local\Temp\cckwYmjL.s]
   ignore line: [GNU assembler version 2.24 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.24]
   ignore line: [COMPILER_PATH=d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/]
   ignore line: [d:/codes/mingw/bin/../libexec/gcc/]
@@ -148,12 +148,12 @@ Parsed C implicit link information from above output:
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/]
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/]
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_405fa.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
-  ignore line: [Linking C executable cmTC_405fa.exe]
-  ignore line: ["D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_405fa.dir\link.txt --verbose=1]
-  ignore line: ["D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_405fa.dir/objects.a]
-  ignore line: [D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_405fa.dir/objects.a @CMakeFiles\cmTC_405fa.dir\objects1.rsp]
-  ignore line: [D:\Codes\MingW\bin\gcc.exe     -v -Wl --whole-archive CMakeFiles\cmTC_405fa.dir/objects.a -Wl --no-whole-archive  -o cmTC_405fa.exe -Wl --out-implib libcmTC_405fa.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\cmTC_7f332.dir\CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_7f332.exe]
+  ignore line: ["D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_7f332.dir\link.txt --verbose=1]
+  ignore line: ["D:\Programmes\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cmTC_7f332.dir/objects.a]
+  ignore line: [D:\Codes\MingW\bin\ar.exe cr CMakeFiles\cmTC_7f332.dir/objects.a @CMakeFiles\cmTC_7f332.dir\objects1.rsp]
+  ignore line: [D:\Codes\MingW\bin\gcc.exe     -v -Wl --whole-archive CMakeFiles\cmTC_7f332.dir/objects.a -Wl --no-whole-archive  -o cmTC_7f332.exe -Wl --out-implib libcmTC_7f332.dll.a -Wl --major-image-version 0 --minor-image-version 0 ]
   ignore line: [Reading specs from d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/specs]
   ignore line: [COLLECT_GCC=D:\Codes\MingW\bin\gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/lto-wrapper.exe]
@@ -168,15 +168,15 @@ Parsed C implicit link information from above output:
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/]
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/]
   ignore line: [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_405fa.exe' '-mtune=generic' '-march=x86-64']
-  link line: [ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_64 -m i386pep -Bdynamic -o cmTC_405fa.exe d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtbegin.o -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3 -Ld:/codes/mingw/bin/../lib64/gcc -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_405fa.dir/objects.a --no-whole-archive --out-implib libcmTC_405fa.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/Codes/MingW/lib64 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7f332.exe' '-mtune=generic' '-march=x86-64']
+  link line: [ d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/collect2.exe --sysroot=/opt/windows_64 -m i386pep -Bdynamic -o cmTC_7f332.exe d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtbegin.o -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3 -Ld:/codes/mingw/bin/../lib64/gcc -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib -Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib --whole-archive CMakeFiles\cmTC_7f332.dir/objects.a --no-whole-archive --out-implib libcmTC_7f332.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -LD:/Codes/MingW/lib64 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtend.o]
     arg [d:/codes/mingw/bin/../libexec/gcc/x86_64-w64-mingw32/4.8.3/collect2.exe] ==> ignore
     arg [--sysroot=/opt/windows_64] ==> ignore
     arg [-m] ==> ignore
     arg [i386pep] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_405fa.exe] ==> ignore
+    arg [cmTC_7f332.exe] ==> ignore
     arg [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib/crtbegin.o] ==> ignore
     arg [-Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3] ==> dir [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3]
@@ -184,10 +184,10 @@ Parsed C implicit link information from above output:
     arg [-Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib/../lib]
     arg [-Ld:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib] ==> dir [d:/codes/mingw/bin/../lib64/gcc/x86_64-w64-mingw32/4.8.3/../../../../x86_64-w64-mingw32/lib]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles\cmTC_405fa.dir/objects.a] ==> ignore
+    arg [CMakeFiles\cmTC_7f332.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--out-implib] ==> ignore
-    arg [libcmTC_405fa.dll.a] ==> ignore
+    arg [libcmTC_7f332.dll.a] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
     arg [--minor-image-version] ==> ignore

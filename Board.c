@@ -100,15 +100,20 @@ void printBoard(struct Board_s* p_board)
         }
         RESET_TEXT;
         printf("\n");
-
-        printf(NORMAL);
     }
+    printf("\t"); BLACK_PAWN_LIGHT; printf("1 "); RESET_TEXT; printf("Black Pawn ");
+    WHITE_PAWN_LIGHT; printf("2 "); RESET_TEXT; printf("White Pawn ");
+    POSSIBLE_TILE_DARK; printf("8 "); RESET_TEXT; printf("Possible Move\n");
 }
 
 void placePiece(struct Board_s** p_board, char p_position[3])
 {
+    //Convert from characters to integers for the position in the matrix
+
     int positionX = p_position[0] - 'A' + 1;
     int positionY = p_position[1] - '0';
+
+    //while the user enter a position outside the matrix, ask again
     while (positionX < 1 || positionX > (*p_board)->m_width - 1 || positionY < 1 || positionY > (*p_board)->m_height - 1)
     {
         CLEAR_CONSOLE;
@@ -118,6 +123,8 @@ void placePiece(struct Board_s** p_board, char p_position[3])
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;
     }
+
+    //while the user enter an incorrect position, ask again
     while (!isPositionCorrect((*p_board), positionX, positionY, true))
     {
         CLEAR_CONSOLE;
@@ -127,6 +134,8 @@ void placePiece(struct Board_s** p_board, char p_position[3])
         positionY = p_position[1] - '0';
         positionX = p_position[0] - 'A' + 1;
     }
+
+    //Place the pawn and reduce the number of cases on the board
     (*p_board)->m_board[positionY][positionX] = (*p_board)->m_playingTeam;
     (*p_board)->m_remainingCases--;
 }
@@ -142,11 +151,16 @@ bool isPositionCorrect(struct Board_s* p_board, int positionX, int positionY, bo
     enum Team_e playingTeam = p_board->m_playingTeam;
     enum Team_e oppositeTeam = playingTeam == BLACK ? WHITE : BLACK;
 
-
+    //if the position is already taken, incorrect
     if (board[positionY][positionX] != BLANK && board[positionY][positionX] != PLAYABLE)
         return false;
 
     int index = 1;
+
+    /* for each 8 direction, check if there is an enemy, if there is an enemy and after there is no blank nor possible case
+     * until an ally, send the position to start turning, the number of pawns to return and the direction
+     */
+
     if (positionX + 1 < width && board[positionY][positionX + 1] == oppositeTeam)
     {
         for(index = 1; (positionX+1+index < width && board[positionY][positionX+1+index] != playingTeam); ++index)
@@ -251,6 +265,7 @@ bool isPositionCorrect(struct Board_s* p_board, int positionX, int positionY, bo
             if (replace) returnPieces(&p_board, positionX + 1, positionY + 1, DOWNRIGHT,  index);
         }
     }
+    //if the case is correct, marks the board
     if(correct)
         p_board->m_board[positionY][positionX] = PLAYABLE;
     return correct;
@@ -259,6 +274,8 @@ bool isPositionCorrect(struct Board_s* p_board, int positionX, int positionY, bo
 void returnPieces(struct Board_s** p_board, int positionX, int positionY, enum Direction_e p_direction, int number)
 {
     enum Team_e finalTeam = (*p_board)->m_playingTeam == BLACK ? BLACK : WHITE;
+
+    //for each direction, place a finalTeam tile to the given position, until a number of pawns
 
     if (p_direction == RIGHT)
     {
@@ -345,6 +362,7 @@ bool stillPlayable(struct Board_s** p_board)
 {
     int width = (*p_board)->m_width;
     int height = (*p_board)->m_height;
+    (*p_board)->m_nbPossibilites = 0;
     bool possible = false;
     for(int i = 1; i < width; ++i)
     {
@@ -365,7 +383,6 @@ int whiteCount(struct Board_s* p_board)
     if (!p_board)
     {
         printf("ERROR in whiteCount() p_board NULL\n");
-        //PAUSE_ONESEC; PAUSE_ONESEC;
     }
     int width = p_board->m_width;
     int height = p_board->m_height;
@@ -387,7 +404,6 @@ int blackCount(struct Board_s* p_board)
     if (!p_board)
     {
         printf("ERROR in blackCount() p_board NULL\n");
-        PAUSE_ONESEC; PAUSE_ONESEC;
     }
     int width = p_board->m_width;
     int height = p_board->m_height;

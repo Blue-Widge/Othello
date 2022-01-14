@@ -11,7 +11,7 @@
 #ifdef WIN32
 #include <windows.h>
 #define CLEAR_CONSOLE system("cls")
-#define PAUSE_ONESEC system("timeout 1")
+#define PAUSE_ONESEC system("@timeout 1")
 #define FOREGROUND_WHITE (FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY)
 #define WHITE_PAWN_DARK SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN | FOREGROUND_WHITE)
 #define WHITE_PAWN_LIGHT SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),BACKGROUND_GREEN | BACKGROUND_INTENSITY | FOREGROUND_WHITE)
@@ -40,6 +40,8 @@
 #define RED "\033[0;31m"
 #define BLUE "\033[0;34m"
 #define GREEN "\033[0;32m]"
+#define INFINITY 99999999
+#define MINUS_INFINITY -99999999
 
 enum Team_e
 {
@@ -49,6 +51,12 @@ enum Team_e
     PLAYABLE = 8
 };
 
+enum GameChoice_e
+{
+    PlayerVSPlayer,
+    PlayerVSAI,
+    AIVSAI
+};
 struct Board_s
 {
     int m_width;
