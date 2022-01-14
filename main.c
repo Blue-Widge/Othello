@@ -60,7 +60,7 @@ int main()
         gameChoice = AIVSAI;
         CLEAR_CONSOLE;
         printf("Which difficulty would you like for the Black AI ? [1 - 9] \n");
-        scanf("%c",userEntry);
+        scanf("%128s",userEntry);
         while(userEntry[0] < '1' || userEntry[0] > '9')
         {
             CLEAR_CONSOLE;
